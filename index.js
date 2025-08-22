@@ -1,8 +1,9 @@
 import { registerRootComponent } from 'expo';
-
 import App from './App';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
+// This is important for splash screen setup in bare workflow
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync();  // Ensure splash screen stays until the app is ready
+
 registerRootComponent(App);
